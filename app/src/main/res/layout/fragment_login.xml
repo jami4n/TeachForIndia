@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/ll_loginholder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <EditText
+            android:hint="Enter your Email"
+            android:backgroundTint="@android:color/transparent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:hint="Enter your Password"
+            android:backgroundTint="@android:color/transparent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/color_black"
+            android:textColor="@color/color_white"
+            android:text="login"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        
+        <Button
+            android:backgroundTint="@color/color_black"
+            android:textColor="@color/color_white"
+            android:text="login via twitter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:backgroundTint="@color/color_black"
+            android:textColor="@color/color_white"
+            android:text="login via facebook"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:background="@color/color_white"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textSize="18dp"
+                android:backgroundTint="@android:color/transparent"
+                android:textColor="@color/color_gray"
+                android:textStyle="bold"
+                android:text="Hi Susanne,"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:backgroundTint="@android:color/transparent"
+                android:textColor="@color/color_gray"
+                android:textSize="18dp"
+                android:text="Thank you for applying for the 'Saturday art class'. We are happy to confirm that you will be a part of our team to impart knowledge to the children of Ghatkopar for the month of June. We hold classes for children every Saturday and Sunday at 6.00pm to 8.00pm. For any futher questions you may contact the event coordinator, Natalie at 9987xxxxxx. \nPlease inform us if you would like to withdraw your participation from this  event. \nRegards, \nTeach for India."
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:src="@drawable/flowers"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
