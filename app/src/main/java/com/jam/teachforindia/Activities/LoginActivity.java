@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Window;
+import android.view.WindowManager;
 
 import com.jam.teachforindia.Fragments.Login.LoginFragment;
 import com.jam.teachforindia.R;
@@ -20,8 +22,10 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
 
+
         Fragment f = new LoginFragment();
         getSupportFragmentManager().beginTransaction().add(R.id.login_container,f).commit();
+
 
     }
 }
