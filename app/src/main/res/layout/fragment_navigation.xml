@@ -5,48 +5,93 @@
     android:background="@color/color_white"
     android:layout_height="match_parent">
 
-    
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_margin="10dp"
-            android:textStyle="bold"
-            android:textSize="20dp"
-            android:text="Home"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+    <LinearLayout
+        android:background="@color/color_black"
+        android:layout_width="match_parent"
+        android:layout_height="120dp">
+
     </LinearLayout>
 
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyc_navigation"
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <TextView
-            android:layout_margin="10dp"
-            android:textStyle="bold"
-            android:textSize="20dp"
-            android:text="Upcoming Events"
+    </android.support.v7.widget.RecyclerView>
+
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:padding="8dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <LinearLayout
+            android:padding="2dp"
+            android:gravity="center_vertical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_home"
+                android:layout_margin="10dp"
+                android:textSize="20dp"
+                android:text="Home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:padding="2dp"
+            android:gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <!--<ImageView-->
+                <!--android:src="@drawable/home"-->
+                <!--android:layout_width="24dp"-->
+                <!--android:layout_height="24dp" />-->
+
+            <TextView
+                android:layout_margin="10dp"
+                android:textSize="20dp"
+                android:text="Volunteer form"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:padding="2dp"
+            android:gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <!--<ImageView-->
+                <!--android:src="@drawable/home"-->
+                <!--android:layout_width="24dp"-->
+                <!--android:layout_height="24dp" />-->
+
+            <TextView
+                android:layout_margin="10dp"
+                android:textSize="20dp"
+                android:text="Top Volunteers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
     </LinearLayout>
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_margin="10dp"
-            android:textStyle="bold"
-            android:textSize="20dp"
-            android:text="Top Voolunteers"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+</ScrollView>
 
 </LinearLayout>

@@ -16,9 +16,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jam.teachforindia.Activities.MainActivity;
+import com.jam.teachforindia.Generic.SessionManager;
 import com.jam.teachforindia.R;
 import com.jam.teachforindia.RetroServices.RetroClient;
 import com.jam.teachforindia.RetroServices.ServiceInterfaces.Login;
+import com.jam.teachforindia.RetroServices.ServiceResponses.Login.LoginData;
 import com.jam.teachforindia.RetroServices.ServiceResponses.Login.LoginResponse;
 
 import retrofit2.Call;
@@ -35,6 +37,8 @@ public class LoginFragment extends Fragment {
     Button btn_login;
     EditText et_username,et_pass;
     TextView tv_signup;
+
+    SessionManager session;
 
     public LoginFragment() {
     }
@@ -77,6 +81,8 @@ public class LoginFragment extends Fragment {
             }
         });
 
+        session = new SessionManager(getActivity());
+
         return  v;
     }
 
@@ -91,12 +97,12 @@ public class LoginFragment extends Fragment {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
 
-                if(response.body().getCode().equals("0")){
-                    Toast.makeText(getActivity(), "Login Successful " + response.body().getData().get(0).getUserid(), Toast.LENGTH_SHORT).show();
 
+                if(response.body().getCode().equals("0")){
+                    LoginData ld = response.body().getData().get(0);
+                    session.setUserLoggedIn(ld.getEmail(),ld.getPassword(),ld.getRole());
                     Intent i = new Intent(getActivity(),MainActivity.class);
                     startActivity(i);
-
                 }else{
                     Toast.makeText(getActivity(), "" + response.body().getMessage(), Toast.LENGTH_SHORT).show();
                 }

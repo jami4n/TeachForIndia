@@ -1,449 +1,670 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
+    android:background="@color/color_black"
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <ScrollView
-        android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
         <LinearLayout
+            android:padding="10dp"
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/input_layout_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:id="@+id/input_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:singleLine="true"
-                    android:hint="Full Name" />
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/input_layout_age"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:id="@+id/input_age"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:singleLine="true"
-                    android:hint="Age" />
-            </android.support.design.widget.TextInputLayout>
-
+            <!--base card -->
             <LinearLayout
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <RadioGroup
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                <RadioButton
-                    android:hint="Male   "
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <RadioButton
-                    android:hint="Female    "
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <RadioButton
-                    android:hint="Other"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                </RadioGroup>
-            </LinearLayout>
-
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/input_layout_contact_number"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:id="@+id/input_contact_number"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:singleLine="true"
-                    android:hint="Contact number" />
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/input_layout_email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:id="@+id/input_email"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:singleLine="true"
-                    android:hint="Email" />
-            </android.support.design.widget.TextInputLayout>
-
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/input_layout_address"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:id="@+id/input_address"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:lines="2"
-                    android:hint="Address" />
-            </android.support.design.widget.TextInputLayout>
-
-            <TextView
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="4dp"
-                android:text="Education"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-            <Spinner
-                android:id="@+id/sp_education"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-            </Spinner>
-
-            <!--++++++++++-->
-
-            <TextView
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="4dp"
-                android:text="Please share details about your most recent educational experience."
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <EditText
-                android:id="@+id/input_education_info"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:lines="2"></EditText>
-
-            <!--++++++++++-->
-
-
-            <TextView
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="4dp"
-                android:text="If you are currently working, please share details of your organisation and your role."
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <EditText
-                android:id="@+id/input_work_info"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:lines="2"></EditText>
-
-            <!--++++++++++-->
-
-            <TextView
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="4dp"
-                android:text="Please share the months that you are available during this academic year."
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-
-            <TextView
-                android:layout_marginTop="2dp"
-                android:layout_marginLeft="4dp"
-                android:textSize="10dp"
-                android:text="Note: Select the quarter you will be available in; all three months are not mandatory"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <LinearLayout
-                android:layout_marginTop="4dp"
+                android:padding="10dp"
                 android:orientation="vertical"
+                android:background="@drawable/white_bg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-
-                <RadioGroup
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <RadioButton
-                        android:hint="June-July-August"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-                    <RadioButton
-                        android:hint="October-November-December"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-                    <RadioButton
-                        android:hint="January-February-March"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-                    <RadioButton
-                        android:hint="I am available during all months"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-
-                </RadioGroup>
-
-            </LinearLayout>
-
-            <!--++++++++++-->
-
-            <TextView
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="4dp"
-                android:text="Which days of the week would you like to volunteer?"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:layout_marginTop="2dp"
-                android:layout_marginLeft="4dp"
-                android:textSize="10dp"
-                android:text="Note: All schools are closed on Sundays. Please pick a minimum of 2 days"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <Spinner
-            android:id="@+id/sp_days_to_volunteer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            </Spinner>
-
-
-            <!--++++++++++-->
-
-
-            <TextView
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="4dp"
-                android:text="What time slot would work best for you?"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:layout_marginTop="2dp"
-                android:layout_marginLeft="4dp"
-                android:textSize="10dp"
-                android:text="Note: We would need you to come in for a minimum of 1.5 hours within these time-slots"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <LinearLayout
-                android:layout_marginTop="4dp"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <RadioButton
-                    android:hint="Between 7:30 am - 12:30 pm"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <RadioButton
-                    android:hint="Between 12:30 pm - 5:30 pm"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-
-            <!--++++++++++-->
-
-
-
-            <TextView
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="4dp"
-                android:text="Where do you feel your skill-sets lie?"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <LinearLayout
-                android:layout_marginTop="4dp"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <RadioGroup
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <RadioButton
-                        android:hint="Classroom instruction"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-                    <RadioButton
-                        android:hint="Extra-curricular workshops/discussions"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-                    <RadioButton
-                        android:hint="Research and data analysis"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-                    <RadioButton
-                        android:hint="Adolescent support"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-                    <RadioButton
-                        android:hint="Fund-raising"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-                    <RadioButton
-                        android:hint="Social media"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-
-                </RadioGroup>
-            </LinearLayout>
-
-
-            <!--++++++++++-->
-
-            <TextView
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="4dp"
-                android:text="Which area in the city would you be comfortable volunteering in?"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:layout_marginTop="2dp"
-                android:layout_marginLeft="4dp"
-                android:textSize="10dp"
-                android:text="While we do try our best to accommodate your preference, please note that final allotment would depend on where our high-need schools are located."
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <Spinner
-                android:id="@+id/sp_preffered_location"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-            </Spinner>
-
-            <!--++++++++++-->
-
-            <TextView
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="4dp"
-            android:text="Why would you like to volunteer with Teach For India?"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-            <EditText
-            android:id="@+id/input_volunteer_reason"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:lines="2"></EditText>
-
-            <!--++++++++++-->
-
-            <TextView
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="4dp"
-                android:text="Why would you like to volunteer with Teach For India?"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-            <Spinner
-                android:id="@+id/sp_volunteerreason"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <!--++++++++++-->
-
-            <TextView
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="4dp"
-                android:text="Have you had prior teaching experience?"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-
-            <LinearLayout
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-                <RadioButton
-                    android:hint="Yes   "
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <RadioButton
-                    android:hint="No    "
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-            </LinearLayout>
-
-            <!--++++++++++-->
-
-            <TextView
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="4dp"
-                android:text="Have you applied to/worked with Teach For India before?"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-            <Spinner
-                android:id="@+id/sp_work_appli"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-
-            <!--++++++++++-->
-
-            <TextView
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="4dp"
-                android:text="Please specify any other way in which you would like to support Teach For India."
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <EditText
-                android:id="@+id/input_additional_help"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:lines="2"></EditText>
-
-            <!--++++++++++-->
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:layout_margin="10dp"
-                    android:src="@drawable/balloons"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp" />
 
                 <TextView
-                    android:layout_gravity="bottom"
-                    android:layout_marginBottom="4dp"
+                    android:text="Fill in your name here."
+                    android:layout_marginLeft="4dp"
+
                     android:textStyle="bold"
-                    android:textSize="26dp"
-                    android:text="Yay! you made it to the end of the page!"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:inputType="text"
+                    android:backgroundTint="@android:color/transparent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+
+            <!--base card -->
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:background="@drawable/white_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Age goes in here."
+                    android:layout_marginLeft="4dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:inputType="number"
+                    android:backgroundTint="@android:color/transparent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+
+
+            <!--base card gender-->
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:background="@drawable/white_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Gender"
+                    android:layout_marginLeft="4dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_margin="10dp"
+                        android:src="@drawable/boy_line"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp" />
+
+                    <ImageView
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:src="@drawable/girl"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--base card contact-->
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:background="@drawable/white_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="We'll need your contact number."
+                    android:layout_marginLeft="4dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:inputType="number"
+                    android:backgroundTint="@android:color/transparent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+
+            <!--base card email-->
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:background="@drawable/white_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Your current email"
+                    android:layout_marginLeft="4dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:inputType="number"
+                    android:backgroundTint="@android:color/transparent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+
+            <!--base card address-->
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:background="@drawable/white_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Your address"
+                    android:layout_marginLeft="4dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:inputType="textMultiLine"
+                    android:backgroundTint="@android:color/transparent"
+                    android:lines="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+
+            <!--base card education-->
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:background="@drawable/white_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Education level"
+                    android:layout_marginLeft="4dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <Spinner
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></Spinner>
+            </LinearLayout>
+
+
+            <!--base card education details-->
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:background="@drawable/white_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Please share details about your most recent educational experience."
+                    android:layout_marginLeft="4dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:inputType="textMultiLine"
+                    android:backgroundTint="@android:color/transparent"
+                    android:lines="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+
+            <!--base card work exp-->
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:background="@drawable/white_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="If you are currently working, please share details of your organisation and your role."
+                    android:layout_marginLeft="4dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:inputType="textMultiLine"
+                    android:backgroundTint="@android:color/transparent"
+                    android:lines="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <!--base card available months-->
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:background="@drawable/white_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Please share the months that you are available during this academic year."
+                    android:layout_marginLeft="4dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="Note: Select the quarter you will be available in. All three months are not mandatory"
+                    android:layout_marginLeft="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+
+                <TextView
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/color_black"
+                    android:text="June-July-August"
+                    android:layout_marginLeft="4dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+
+                <TextView
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/color_black"
+                    android:text="October-November-December"
+                    android:layout_marginLeft="4dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/color_black"
+                    android:text="January-February-March"
+                    android:layout_marginLeft="4dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginTop="4dp"
+                    android:text="I am available during all months"
+                    android:textColor="@color/color_blue"
+                    android:layout_marginLeft="4dp"
+                    android:textStyle="bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
             </LinearLayout>
 
-            <!--++++++++++-->
 
+            <!--base card volunteer day of the week-->
+            <LinearLayout
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:orientation="vertical"
+            android:background="@drawable/white_bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+            android:text="Which days of the week would you like to volunteer?"
+            android:layout_marginLeft="4dp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+            <TextView
+            android:text="Note: All schools are closed on Sundays. Please pick a minimum of 2 days"
+            android:layout_marginLeft="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_marginTop="4dp"
+                android:textColor="@color/color_black"
+                android:text="Monday"
+                android:layout_marginLeft="4dp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_marginTop="4dp"
+                android:textColor="@color/color_black"
+                android:text="Tuesday"
+                android:layout_marginLeft="4dp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/color_black"
+                    android:text="Wednesday"
+                    android:layout_marginLeft="4dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/color_black"
+                    android:text="Thursday"
+                    android:layout_marginLeft="4dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/color_blue"
+                    android:text="Friday"
+                    android:layout_marginLeft="4dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/color_blue"
+                    android:text="Saturday"
+                    android:layout_marginLeft="4dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <!--base card time slot-->
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:background="@drawable/white_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="What time slot would work best for you?"
+                    android:layout_marginLeft="4dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:text="Note: We would need you to come in for a minimum of 1.5 hours within these time-slots"
+                    android:layout_marginLeft="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/color_blue"
+                    android:text="Between 7:30 am - 12:30 pm"
+                    android:layout_marginLeft="4dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/color_black"
+                    android:text="Between 12:30 pm - 5:30 pm"
+                    android:layout_marginLeft="4dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <!--base card skill set-->
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:background="@drawable/white_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Where do you feel your skill-sets lie?"
+                    android:layout_marginLeft="4dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/color_blue"
+                    android:text="Classroom instruction"
+                    android:layout_marginLeft="4dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/color_black"
+                    android:text="Between 12:30 pm - 5:30 pm"
+                    android:layout_marginLeft="4dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/color_black"
+                    android:text="Extra-curricular workshops/discussions"
+                    android:layout_marginLeft="4dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/color_black"
+                    android:text="Research and data analysis"
+                    android:layout_marginLeft="4dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/color_black"
+                    android:text="Fund-raising"
+                    android:layout_marginLeft="4dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/color_black"
+                    android:text="Social media"
+                    android:layout_marginLeft="4dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+
+            <!--base card city area choice-->
+            <LinearLayout
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:orientation="vertical"
+            android:background="@drawable/white_bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+            android:text="Which area in the city would you be comfortable volunteering in?"
+            android:layout_marginLeft="4dp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+                <TextView
+                android:text="While we do try our best to accommodate your preference, please note that final allotment would depend on where our high-need schools are located."
+                android:layout_marginLeft="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+                <Spinner
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></Spinner>
+
+            </LinearLayout>
+
+            <!--base card why volunteer-->
+            <LinearLayout
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:orientation="vertical"
+            android:background="@drawable/white_bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+                <TextView
+                android:text="Why would you like to volunteer with Teach For India?"
+                android:layout_marginLeft="4dp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+                <EditText
+                android:inputType="textMultiLine"
+                android:backgroundTint="@android:color/transparent"
+                android:lines="2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+
+
+            <!--base card Prior experience-->
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:background="@drawable/white_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Have you had prior teaching experience?"
+                    android:layout_marginLeft="4dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/color_blue"
+                    android:text="Yes"
+                    android:layout_marginLeft="4dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/color_black"
+                    android:text="No"
+                    android:layout_marginLeft="4dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+
+            <!--base card Prior application-->
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:background="@drawable/white_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Have you applied to/worked with Teach For India before?"
+                    android:layout_marginLeft="4dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/color_blue"
+                    android:text="Yes"
+                    android:layout_marginLeft="4dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/color_black"
+                    android:text="No"
+                    android:layout_marginLeft="4dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+
+            <!--base card Other support-->
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:background="@drawable/white_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Please specify any other way in which you would like to support Teach For India."
+                    android:layout_marginLeft="4dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:inputType="textMultiLine"
+                    android:backgroundTint="@android:color/transparent"
+                    android:lines="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
 
 
             <Button
-                android:backgroundTint="@color/color_black"
-                android:textColor="@color/color_white"
-                android:text="Submit"
+                android:id="@+id/btn_save_userdata"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/color_blue"
+                android:textColor="@color/color_black"
+                android:text="Save"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
         </LinearLayout>
     </ScrollView>
+
 </RelativeLayout>

@@ -9,7 +9,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetroClient {
 
-    public static final String BASE_URL = "http://tfiweb.herokuapp.com/";
+    //public static final String BASE_URL = "http://tfiweb.herokuapp.com/";
+    public static final String BASE_URL = "http://192.168.1.4:3000/";
     private static Retrofit retroClient = null;
 
     public static Retrofit getClient(){

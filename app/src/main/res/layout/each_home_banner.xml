@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_banner"
+            android:scaleType="centerCrop"
+            android:src="@drawable/test"
+            android:layout_width="match_parent"
+            android:layout_height="260dp" />
+
+        <TextView
+            android:id="@+id/tv_banner_text"
+            android:layout_margin="10dp"
+            android:text="Imagination is endless. Photographed by our volunteer Abhinetri at Dakor, Gujarat. This was at the winter camp for Social Education."
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</LinearLayout>

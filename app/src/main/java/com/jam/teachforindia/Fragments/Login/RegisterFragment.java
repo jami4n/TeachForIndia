@@ -1,5 +1,6 @@
 package com.jam.teachforindia.Fragments.Login;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -12,9 +13,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.jam.teachforindia.Activities.MainActivity;
+import com.jam.teachforindia.Generic.SessionManager;
 import com.jam.teachforindia.R;
 import com.jam.teachforindia.RetroServices.RetroClient;
 import com.jam.teachforindia.RetroServices.ServiceInterfaces.Login;
+import com.jam.teachforindia.RetroServices.ServiceResponses.Register.RegisterData;
 import com.jam.teachforindia.RetroServices.ServiceResponses.Register.RegisterResponse;
 
 import retrofit2.Call;
@@ -31,6 +35,8 @@ public class RegisterFragment extends Fragment {
 
     Button btn_register;
     EditText et_name,et_username,et_pass;
+
+    SessionManager session;
 
     public RegisterFragment() {
     }
@@ -57,6 +63,7 @@ public class RegisterFragment extends Fragment {
             }
         });
 
+        session = new SessionManager(getActivity());
         return v;
     }
 
@@ -74,7 +81,11 @@ public class RegisterFragment extends Fragment {
                 Log.d(TAG, "onResponse: " + response.body().getMessage());
 
                 if(response.body().getCode().equals("0")){
-                    Toast.makeText(getActivity(), "Registration Successful " + response.body().getData().getUserid(), Toast.LENGTH_SHORT).show();
+                    RegisterData rd = response.body().getData();
+                    session.setUserLoggedIn(rd.getEmail(),rd.getPassword(),rd.getRole());
+                    Intent i = new Intent(getActivity(),MainActivity.class);
+                    getActivity().startActivity(i);
+
                 }else{
                     Toast.makeText(getActivity(), "" + response.body().getMessage(), Toast.LENGTH_SHORT).show();
                 }
