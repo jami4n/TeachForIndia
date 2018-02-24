@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.jam.teachforindia.Fragments.Events.EventsAdapter;
+import com.jam.teachforindia.Fragments.Home.HomeFragment;
 import com.jam.teachforindia.Generic.SessionManager;
 import com.jam.teachforindia.R;
 import com.jam.teachforindia.RetroServices.RetroClient;
@@ -91,6 +92,7 @@ public class CreateEvent extends Fragment {
 
                 if(response.body().getCode().equals("0")){
                     Toast.makeText(getActivity(), "" + response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                    getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container,new HomeFragment()).commit();
                 }else{
                     Toast.makeText(getActivity(), "" + response.body().getMessage(), Toast.LENGTH_SHORT).show();
                 }

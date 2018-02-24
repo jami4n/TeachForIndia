@@ -10,12 +10,14 @@ public class LoginData {
     String email;
     String password;
     String role;
+    String firstname;
 
-    public LoginData(String userid, String email, String password, String role) {
+    public LoginData(String userid, String email, String password, String role, String firstname) {
         this.userid = userid;
         this.email = email;
         this.password = password;
         this.role = role;
+        this.firstname = firstname;
     }
 
     public String getUserid() {
@@ -48,5 +50,13 @@ public class LoginData {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 }

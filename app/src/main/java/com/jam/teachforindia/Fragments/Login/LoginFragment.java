@@ -56,8 +56,8 @@ public class LoginFragment extends Fragment {
         et_pass = v.findViewById(R.id.et_pass);
         et_username = v.findViewById(R.id.et_username);
 
-        et_username.setText("jamian@test.com");
-        et_pass.setText("jamian");
+        et_username.setText("vinay@test.com");
+        et_pass.setText("vinay");
 
         tv_signup = v.findViewById(R.id.tv_signup);
         tv_signup.setOnClickListener(new View.OnClickListener() {
@@ -100,7 +100,7 @@ public class LoginFragment extends Fragment {
 
                 if(response.body().getCode().equals("0")){
                     LoginData ld = response.body().getData().get(0);
-                    session.setUserLoggedIn(ld.getEmail(),ld.getPassword(),ld.getRole());
+                    session.setUserLoggedIn(ld.getEmail(),ld.getPassword(),ld.getRole(),ld.getFirstname());
                     Intent i = new Intent(getActivity(),MainActivity.class);
                     startActivity(i);
                 }else{

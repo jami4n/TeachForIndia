@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.jam.teachforindia.Fragments.ApplyforEvent.ApplyForEvent;
+import com.jam.teachforindia.Fragments.EventApplicants.EventApplicants;
 import com.jam.teachforindia.R;
 import com.jam.teachforindia.RetroServices.RetroClient;
 import com.jam.teachforindia.RetroServices.ServiceInterfaces.Events;
@@ -108,5 +110,29 @@ public class ViewEvents extends Fragment implements EventClicks{
     @Override
     public void applyforevent(View v, String eventid) {
         Toast.makeText(getActivity(), "" + eventid, Toast.LENGTH_SHORT).show();
+
+        Fragment f = new ApplyForEvent();
+        Bundle b = new Bundle();
+        b.putString("eventid",eventid);
+        f.setArguments(b);
+
+        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container,f).addToBackStack(null).commit();
+    }
+
+    @Override
+    public void showApplicants(View v, String eventid) {
+        Fragment eve = new EventApplicants();
+        Bundle b = new Bundle();
+        b.putString("eventid",eventid);
+        eve.setArguments(b);
+
+        getActivity().getSupportFragmentManager()
+                .beginTransaction()
+                .setCustomAnimations(R.anim.enter_from_right,R.anim.exit_to_left)
+                .replace(R.id.container,eve)
+                .addToBackStack(null)
+                .commit();
+
+
     }
 }

@@ -8,4 +8,6 @@ import android.view.View;
 
 public interface EventClicks {
     void applyforevent(View v, String eventid);
+    
+    void showApplicants(View v, String eventid);
 }

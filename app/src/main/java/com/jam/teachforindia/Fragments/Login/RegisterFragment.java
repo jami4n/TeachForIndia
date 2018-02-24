@@ -69,7 +69,7 @@ public class RegisterFragment extends Fragment {
 
     private void registerUser() {
 
-        String name = et_name.getText().toString();
+        final String name = et_name.getText().toString();
         String username = et_username.getText().toString();
         String password = et_pass.getText().toString();
 
@@ -82,7 +82,7 @@ public class RegisterFragment extends Fragment {
 
                 if(response.body().getCode().equals("0")){
                     RegisterData rd = response.body().getData();
-                    session.setUserLoggedIn(rd.getEmail(),rd.getPassword(),rd.getRole());
+                    session.setUserLoggedIn(rd.getEmail(),rd.getPassword(),rd.getRole(),name);
                     Intent i = new Intent(getActivity(),MainActivity.class);
                     getActivity().startActivity(i);
 

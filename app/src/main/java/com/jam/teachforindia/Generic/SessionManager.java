@@ -19,9 +19,10 @@ public class SessionManager {
 
     // All Shared Preferences Keys
     private static final String IS_LOGGED_IN = "IsLoggedIn";
-    private static final String USER_ID = "UserID";
-    private static final String USERNAME = "UserEmail";
-    private static final String ROLE = "UserRole";
+    public static final String USER_ID = "UserID";
+    public static final String USERNAME = "UserEmail";
+    public static final String ROLE = "UserRole";
+    public static final String NAME = "UserName";
 
     public SessionManager(Context context) {
         this.context = context;
@@ -30,14 +31,18 @@ public class SessionManager {
     }
 
 
-    public void setUserLoggedIn(String username, String userid, String role){
+    public void setUserLoggedIn(String username, String userid, String role,String name){
         editor.putBoolean(IS_LOGGED_IN, true);
         editor.putString(USERNAME, username);
         editor.putString(USER_ID, userid);
         editor.putString(ROLE, role);
+        editor.putString(NAME, name);
         editor.commit();
     }
 
+    public boolean IsLoggedIn(){
+        return sharedPreferences.getBoolean(IS_LOGGED_IN,false);
+    }
 
     public void setUserLoggedOut(){
         editor.putBoolean(IS_LOGGED_IN, false);
@@ -52,6 +57,7 @@ public class SessionManager {
         user.put(USERNAME, sharedPreferences.getString(USERNAME, null));
         user.put(USER_ID, sharedPreferences.getString(USER_ID, null));
         user.put(ROLE, sharedPreferences.getString(ROLE, null));
+        user.put(NAME, sharedPreferences.getString(NAME, null));
         return user;
     }
 

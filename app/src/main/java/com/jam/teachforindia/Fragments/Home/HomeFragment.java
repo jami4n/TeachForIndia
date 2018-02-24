@@ -22,10 +22,14 @@ import com.jam.teachforindia.RetroServices.ServiceInterfaces.Banners;
 import com.jam.teachforindia.RetroServices.ServiceResponses.GetBanner.BannerData;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import ss.com.bannerslider.banners.Banner;
+import ss.com.bannerslider.banners.RemoteBanner;
+import ss.com.bannerslider.views.BannerSlider;
 
 /**
  * Created by Jam on 07-02-2018.
@@ -35,8 +39,11 @@ public class HomeFragment extends Fragment{
 
     RecyclerView recyc_banner;
     BannerAdapter bannerAdapter;
-    ArrayList<BannerPojo> banners;
+    //ArrayList<BannerPojo> banners;
 
+
+    List<Banner> banners;
+    BannerSlider bannerSlider;
 
     public HomeFragment() {
     }
@@ -51,18 +58,26 @@ public class HomeFragment extends Fragment{
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_home,container,false);
 
-        recyc_banner = v.findViewById(R.id.recyc_banner);
-        banners = new ArrayList<>();
+//        recyc_banner = v.findViewById(R.id.recyc_banner);
+//        banners = new ArrayList<>();
+//
+//        bannerAdapter = new BannerAdapter(banners,getActivity());
+//        recyc_banner.setLayoutManager(new LinearLayoutManager(this.getContext(),LinearLayout.HORIZONTAL,false));
+//        recyc_banner.setItemAnimator(new DefaultItemAnimator());
+//        recyc_banner.setAdapter(bannerAdapter);
+//
+//        banners.add(new BannerPojo("0","http://jamian.herokuapp.com/public/images/mainimg_wide.jpg","This is taken by jamainfor the love of trees."));
+//        bannerAdapter.notifyDataSetChanged();
+//
+       getBannerData();
 
-        bannerAdapter = new BannerAdapter(banners,getActivity());
-        recyc_banner.setLayoutManager(new LinearLayoutManager(this.getContext(),LinearLayout.HORIZONTAL,false));
-        recyc_banner.setItemAnimator(new DefaultItemAnimator());
-        recyc_banner.setAdapter(bannerAdapter);
+        bannerSlider = v.findViewById(R.id.banner_slider1);
+        banners=new ArrayList<>();
+        //add banner using image url
+        //add banner using resource drawable
+        //banners.add(new DrawableBanner(R.drawable.yourDrawable));
+        bannerSlider.setBanners(banners);
 
-        banners.add(new BannerPojo("0","http://jamian.herokuapp.com/public/images/mainimg_wide.jpg","This is taken by jamainfor the love of trees."));
-        bannerAdapter.notifyDataSetChanged();
-
-        getBannerData();
 
         return v;
     }
@@ -79,11 +94,12 @@ public class HomeFragment extends Fragment{
                 banners.clear();
 
                 for(BannerData b : response.body()){
-                    BannerPojo bpo = new BannerPojo(b.getBannerid(),b.getBannerimagepath(),b.getBannerdescription());
-                    banners.add(bpo);
+                    //BannerPojo bpo = new BannerPojo(b.getBannerid(),b.getBannerimagepath(),b.getBannerdescription());
+                    //banners.add(bpo);
+                    banners.add(new RemoteBanner(b.getBannerimagepath()));
                 }
-
-                bannerAdapter.notifyDataSetChanged();
+                bannerSlider.setBanners(banners);
+                //bannerAdapter.notifyDataSetChanged();
 
             }
 

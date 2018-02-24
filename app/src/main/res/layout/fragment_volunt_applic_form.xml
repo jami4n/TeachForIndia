@@ -24,12 +24,12 @@
                 <TextView
                     android:text="Fill in your name here."
                     android:layout_marginLeft="4dp"
-
                     android:textStyle="bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
                 <EditText
+                    android:id="@+id/et_name"
                     android:inputType="text"
                     android:backgroundTint="@android:color/transparent"
                     android:layout_width="match_parent"
@@ -54,6 +54,7 @@
                     android:layout_height="wrap_content" />
 
                 <EditText
+                    android:id="@+id/et_age"
                     android:inputType="number"
                     android:backgroundTint="@android:color/transparent"
                     android:layout_width="match_parent"
@@ -84,12 +85,14 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
+                        android:id="@+id/iv_boy"
                         android:layout_margin="10dp"
                         android:src="@drawable/boy_line"
                         android:layout_width="40dp"
                         android:layout_height="40dp" />
 
                     <ImageView
+                        android:id="@+id/iv_girl"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
                         android:src="@drawable/girl"
@@ -117,6 +120,7 @@
                     android:layout_height="wrap_content" />
 
                 <EditText
+                    android:id="@+id/et_contact"
                     android:inputType="number"
                     android:backgroundTint="@android:color/transparent"
                     android:layout_width="match_parent"
@@ -141,6 +145,7 @@
                     android:layout_height="wrap_content" />
 
                 <EditText
+                    android:id="@+id/et_email"
                     android:inputType="number"
                     android:backgroundTint="@android:color/transparent"
                     android:layout_width="match_parent"
@@ -165,6 +170,7 @@
                     android:layout_height="wrap_content" />
 
                 <EditText
+                    android:id="@+id/et_address"
                     android:inputType="textMultiLine"
                     android:backgroundTint="@android:color/transparent"
                     android:lines="2"
@@ -189,11 +195,42 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
-                <Spinner
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="4dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"></Spinner>
+                <TextView
+                    android:id="@+id/tv_postgrad"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/color_black"
+                    android:text="Post Graduate"
+                    android:layout_marginLeft="4dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tv_grad"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/color_black"
+                    android:text="Graduate"
+                    android:layout_marginLeft="4dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tv_undergrad"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/color_black"
+                    android:text="Pursuing an Under Grad degree"
+                    android:layout_marginLeft="4dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tv_school"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/color_black"
+                    android:text="In School"
+                    android:layout_marginLeft="4dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
             </LinearLayout>
 
 
@@ -214,6 +251,7 @@
                     android:layout_height="wrap_content" />
 
                 <EditText
+                    android:id="@+id/et_educationdetails"
                     android:inputType="textMultiLine"
                     android:backgroundTint="@android:color/transparent"
                     android:lines="2"
@@ -239,6 +277,7 @@
                     android:layout_height="wrap_content" />
 
                 <EditText
+                    android:id="@+id/et_work_details"
                     android:inputType="textMultiLine"
                     android:backgroundTint="@android:color/transparent"
                     android:lines="2"
@@ -268,9 +307,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
-
-
                 <TextView
+                    android:id="@+id/tv_availablemonth_jja"
                     android:layout_marginTop="4dp"
                     android:textColor="@color/color_black"
                     android:text="June-July-August"
@@ -282,6 +320,7 @@
 
 
                 <TextView
+                    android:id="@+id/tv_availablemonth_ond"
                     android:layout_marginTop="4dp"
                     android:textColor="@color/color_black"
                     android:text="October-November-December"
@@ -291,6 +330,7 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
+                    android:id="@+id/tv_availablemonth_jfm"
                     android:layout_marginTop="4dp"
                     android:textColor="@color/color_black"
                     android:text="January-February-March"
@@ -300,9 +340,10 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
+                    android:id="@+id/tv_availablemonth_all"
                     android:layout_marginTop="4dp"
                     android:text="I am available during all months"
-                    android:textColor="@color/color_blue"
+                    android:textColor="@color/color_black"
                     android:layout_marginLeft="4dp"
                     android:textStyle="bold"
                     android:layout_width="wrap_content"
@@ -333,6 +374,7 @@
             android:layout_height="wrap_content" />
 
             <TextView
+                android:id="@+id/et_monday"
                 android:layout_marginTop="4dp"
                 android:textColor="@color/color_black"
                 android:text="Monday"
@@ -342,6 +384,7 @@
                 android:layout_height="wrap_content" />
 
             <TextView
+                android:id="@+id/et_tuesday"
                 android:layout_marginTop="4dp"
                 android:textColor="@color/color_black"
                 android:text="Tuesday"
@@ -351,6 +394,7 @@
                 android:layout_height="wrap_content" />
 
                 <TextView
+                    android:id="@+id/et_wednesday"
                     android:layout_marginTop="4dp"
                     android:textColor="@color/color_black"
                     android:text="Wednesday"
@@ -360,6 +404,7 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
+                    android:id="@+id/et_thursday"
                     android:layout_marginTop="4dp"
                     android:textColor="@color/color_black"
                     android:text="Thursday"
@@ -369,6 +414,7 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
+                    android:id="@+id/et_friday"
                     android:layout_marginTop="4dp"
                     android:textColor="@color/color_blue"
                     android:text="Friday"
@@ -378,6 +424,7 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
+                    android:id="@+id/et_saturday"
                     android:layout_marginTop="4dp"
                     android:textColor="@color/color_blue"
                     android:text="Saturday"
@@ -410,6 +457,7 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
+                    android:id="@+id/tv_07301230"
                     android:layout_marginTop="4dp"
                     android:textColor="@color/color_blue"
                     android:text="Between 7:30 am - 12:30 pm"
@@ -419,6 +467,7 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
+                    android:id="@+id/tv_12300530"
                     android:layout_marginTop="4dp"
                     android:textColor="@color/color_black"
                     android:text="Between 12:30 pm - 5:30 pm"
@@ -445,6 +494,7 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
+                    android:id="@+id/tv_classroom"
                     android:layout_marginTop="4dp"
                     android:textColor="@color/color_blue"
                     android:text="Classroom instruction"
@@ -454,15 +504,17 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
+                    android:id="@+id/tv_adolescence"
                     android:layout_marginTop="4dp"
                     android:textColor="@color/color_black"
-                    android:text="Between 12:30 pm - 5:30 pm"
+                    android:text="Adolescent support"
                     android:layout_marginLeft="4dp"
                     android:textStyle="bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
                 <TextView
+                    android:id="@+id/tv_extras"
                     android:layout_marginTop="4dp"
                     android:textColor="@color/color_black"
                     android:text="Extra-curricular workshops/discussions"
@@ -472,6 +524,7 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
+                    android:id="@+id/tv_research"
                     android:layout_marginTop="4dp"
                     android:textColor="@color/color_black"
                     android:text="Research and data analysis"
@@ -481,6 +534,7 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
+                    android:id="@+id/tv_funds"
                     android:layout_marginTop="4dp"
                     android:textColor="@color/color_black"
                     android:text="Fund-raising"
@@ -490,6 +544,7 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
+                    android:id="@+id/tv_social_media"
                     android:layout_marginTop="4dp"
                     android:textColor="@color/color_black"
                     android:text="Social media"
@@ -501,34 +556,35 @@
 
 
             <!--base card city area choice-->
-            <LinearLayout
-            android:layout_marginTop="10dp"
-            android:padding="10dp"
-            android:orientation="vertical"
-            android:background="@drawable/white_bg"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            <!--<LinearLayout-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:padding="10dp"-->
+            <!--android:orientation="vertical"-->
+            <!--android:background="@drawable/white_bg"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
 
-            <TextView
-            android:text="Which area in the city would you be comfortable volunteering in?"
-            android:layout_marginLeft="4dp"
-            android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            <!--<TextView-->
+            <!--android:text="Which area in the city would you be comfortable volunteering in?"-->
+            <!--android:layout_marginLeft="4dp"-->
+            <!--android:textStyle="bold"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" />-->
 
-                <TextView
-                android:text="While we do try our best to accommodate your preference, please note that final allotment would depend on where our high-need schools are located."
-                android:layout_marginLeft="4dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                <!--<TextView-->
+                <!--android:text="While we do try our best to accommodate your preference, please note that final allotment would depend on where our high-need schools are located."-->
+                <!--android:layout_marginLeft="4dp"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content" />-->
 
-                <Spinner
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="4dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"></Spinner>
+                <!--<Spinner-->
+                    <!--android:id="@+id/sp_city"-->
+                    <!--android:layout_marginTop="10dp"-->
+                    <!--android:layout_marginBottom="4dp"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"></Spinner>-->
 
-            </LinearLayout>
+            <!--</LinearLayout>-->
 
             <!--base card why volunteer-->
             <LinearLayout
@@ -547,6 +603,7 @@
                 android:layout_height="wrap_content" />
 
                 <EditText
+                    android:id="@+id/et_volunteer_reason"
                 android:inputType="textMultiLine"
                 android:backgroundTint="@android:color/transparent"
                 android:lines="2"
@@ -574,6 +631,7 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
+                    android:id="@+id/tv_teachingexp_yes"
                     android:layout_marginTop="4dp"
                     android:textColor="@color/color_blue"
                     android:text="Yes"
@@ -583,6 +641,7 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
+                    android:id="@+id/tv_teachingexp_no"
                     android:layout_marginTop="4dp"
                     android:textColor="@color/color_black"
                     android:text="No"
@@ -610,6 +669,7 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
+                    android:id="@+id/tv_priorapplied_yes"
                     android:layout_marginTop="4dp"
                     android:textColor="@color/color_blue"
                     android:text="Yes"
@@ -619,6 +679,7 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
+                    android:id="@+id/tv_priorapplied_no"
                     android:layout_marginTop="4dp"
                     android:textColor="@color/color_black"
                     android:text="No"
@@ -646,6 +707,7 @@
                     android:layout_height="wrap_content" />
 
                 <EditText
+                    android:id="@+id/et_othersupport"
                     android:inputType="textMultiLine"
                     android:backgroundTint="@android:color/transparent"
                     android:lines="2"

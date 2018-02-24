@@ -1,7 +1,10 @@
 package com.jam.teachforindia.RetroServices.ServiceInterfaces;
 
+import com.jam.teachforindia.RetroServices.ServiceResponses.ApplyForEvent.EventApplyResponse;
 import com.jam.teachforindia.RetroServices.ServiceResponses.CreateEvent.CreateEventsResponse;
+import com.jam.teachforindia.RetroServices.ServiceResponses.EventApplicants.EventApplicantsResponse;
 import com.jam.teachforindia.RetroServices.ServiceResponses.GetEvents.EventsResponse;
+import com.jam.teachforindia.RetroServices.ServiceResponses.StaffUpdateApplication.ApplicationUpdateResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -28,5 +31,16 @@ public interface Events {
                                             @Query("eventstartdate") String eventstartdate,
                                             @Query("eventenddate") String eventenddate);
 
+    @GET("getapplications")
+    Call<EventApplicantsResponse> getEventApplicants(@Query("eventid") String eventid);
+
+
+    @GET("applyforevent")
+    Call<EventApplyResponse> applyforevent(@Query("userid") String userid,@Query("eventid") String eventid,
+                                           @Query("contact") String contact,@Query("email") String email,
+                                           @Query("note") String note);
+
+    @GET("staffupdateeventapplication")
+    Call<ApplicationUpdateResponse> staffupdateapplication(@Query("eventapplicationid") String eventapplicationid, @Query("isselected") String isselected, @Query("staffnote") String staffnote);
 
 }

@@ -55,6 +55,13 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.MyVH> {
             }
         });
 
+        holder.btn_applicants.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                eventClicks.showApplicants(v,e.getEventId());
+            }
+        });
+
         holder.btn_more_details.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,7 +84,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.MyVH> {
 
     public class MyVH extends RecyclerView.ViewHolder {
         TextView tv_event_title,tv_description,tv_dates,tv_location;
-        Button btn_apply,btn_more_details;
+        Button btn_apply,btn_applicants,btn_more_details;
         ImageView iv_event_image;
         LinearLayout ll_details;
 
@@ -89,6 +96,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.MyVH> {
             tv_dates = itemView.findViewById(R.id.tv_dates);
             tv_location = itemView.findViewById(R.id.tv_location);
             btn_apply = itemView.findViewById(R.id.btn_apply);
+            btn_applicants = itemView.findViewById(R.id.btn_applicants);
             btn_more_details = itemView.findViewById(R.id.btn_more_details);
             iv_event_image = itemView.findViewById(R.id.iv_event_image);
             ll_details = itemView.findViewById(R.id.ll_details);
