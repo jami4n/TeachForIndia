@@ -87,7 +87,7 @@ public class EventsApplicationAdapter extends RecyclerView.Adapter<EventsApplica
         holder.btn_hold.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                eventApplicantClicks.onSelectedClicked(v,2,e.getApplicationId(),e.getName());
+                eventApplicantClicks.onSelectedClicked(holder.tv_status,2,e.getApplicationId(),e.getName());
             }
         });
 

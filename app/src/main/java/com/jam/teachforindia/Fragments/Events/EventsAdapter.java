@@ -9,8 +9,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.jam.teachforindia.Generic.SessionManager;
 import com.jam.teachforindia.R;
 
 import java.util.ArrayList;
@@ -24,11 +26,13 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.MyVH> {
     ArrayList<EventsPojo> events;
     Context context;
     EventClicks eventClicks;
+    SessionManager session;
 
     public EventsAdapter(ArrayList<EventsPojo> events, Context context, EventClicks eventClicks) {
         this.events = events;
         this.context = context;
         this.eventClicks = eventClicks;
+        session = new SessionManager(context);
     }
 
     @Override
@@ -43,6 +47,16 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.MyVH> {
     public void onBindViewHolder(final MyVH holder, int position) {
         final EventsPojo e = events.get(position);
 
+        if(session.getUserRole().equals("S") || session.getUserRole().equals("F")){
+            holder.btn_applicants.setVisibility(View.VISIBLE);
+            holder.btn_selected.setVisibility(View.VISIBLE);
+            holder.btn_apply.setVisibility(View.GONE);
+        }else{
+            holder.btn_selected.setVisibility(View.GONE);
+            holder.btn_applicants.setVisibility(View.GONE);
+            holder.btn_apply.setVisibility(View.VISIBLE);
+        }
+
         holder.tv_event_title.setText(e.getEventTitle());
         holder.tv_description.setText(e.getEventDescription());
         holder.tv_dates.setText(e.getEventStartDate());
@@ -51,7 +65,12 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.MyVH> {
         holder.btn_apply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                eventClicks.applyforevent(v,e.getEventId());
+                if(session.getUserRole().equals("N")){
+                    Toast.makeText(context, "You need to fill your volunteering profile to apply for events.", Toast.LENGTH_SHORT).show();
+                }else{
+                    eventClicks.applyforevent(v,e.getEventId());                    
+                }
+
             }
         });
 
@@ -59,6 +78,13 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.MyVH> {
             @Override
             public void onClick(View v) {
                 eventClicks.showApplicants(v,e.getEventId());
+            }
+        });
+
+        holder.btn_selected.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                eventClicks.selectedApplicants(v,e.getEventId());
             }
         });
 
@@ -84,7 +110,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.MyVH> {
 
     public class MyVH extends RecyclerView.ViewHolder {
         TextView tv_event_title,tv_description,tv_dates,tv_location;
-        Button btn_apply,btn_applicants,btn_more_details;
+        Button btn_apply,btn_applicants,btn_more_details,btn_selected;
         ImageView iv_event_image;
         LinearLayout ll_details;
 
@@ -98,6 +124,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.MyVH> {
             btn_apply = itemView.findViewById(R.id.btn_apply);
             btn_applicants = itemView.findViewById(R.id.btn_applicants);
             btn_more_details = itemView.findViewById(R.id.btn_more_details);
+            btn_selected = itemView.findViewById(R.id.btn_selected);
             iv_event_image = itemView.findViewById(R.id.iv_event_image);
             ll_details = itemView.findViewById(R.id.ll_details);
 

@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.jam.teachforindia.Activities.MainActivity;
+import com.jam.teachforindia.Fragments.Home.HomeFragment;
 import com.jam.teachforindia.Generic.SessionManager;
 import com.jam.teachforindia.R;
 import com.jam.teachforindia.RetroServices.RetroClient;
@@ -84,6 +85,7 @@ public class VolunteerApplicationForm extends Fragment{
         et_othersupport = v.findViewById(R.id.et_othersupport);
 
         tv_availablemonth_jja = v.findViewById(R.id.tv_availablemonth_jja);
+        tv_availablemonth_ond = v.findViewById(R.id.tv_availablemonth_ond);
         tv_availablemonth_ond = v.findViewById(R.id.tv_availablemonth_ond);
         tv_availablemonth_jfm = v.findViewById(R.id.tv_availablemonth_jfm);
         tv_availablemonth_all = v.findViewById(R.id.tv_availablemonth_all);
@@ -286,6 +288,10 @@ public class VolunteerApplicationForm extends Fragment{
                     tv_availablemonth_all.setTextColor(getResources().getColor(R.color.color_black));
                 }else{
                     tv_availablemonth_all.setTextColor(getResources().getColor(R.color.color_blue));
+                    tv_availablemonth_jfm.setTextColor(getResources().getColor(R.color.color_black));
+                    tv_availablemonth_ond.setTextColor(getResources().getColor(R.color.color_black));
+                    tv_availablemonth_jja.setTextColor(getResources().getColor(R.color.color_black));
+                    availablemonths.clear();
                     availablemonths.add("I am available during all months");
                 }
 
@@ -547,6 +553,8 @@ public class VolunteerApplicationForm extends Fragment{
 
 
         session = new SessionManager(getActivity());
+        et_name.setText(session.getUserDetails().get(SessionManager.NAME));
+        et_email.setText(session.getUserDetails().get(SessionManager.USERNAME));
 
         Button btn_save_userdata = v.findViewById(R.id.btn_save_userdata);
         btn_save_userdata.setOnClickListener(new View.OnClickListener() {
@@ -583,6 +591,8 @@ public class VolunteerApplicationForm extends Fragment{
         String priorapplication = haspriorapplied == true ? "Yes" : "No";
         String othersupport = et_othersupport.getText().toString();
 
+        session.setGender(gendertab);
+
         UpdateUserRequest userdata = new UpdateUserRequest(userid,firstname,lastname,age,
                 gender,contactnumber,currentemail,
                 address,educationn,educationdetails,
@@ -595,12 +605,17 @@ public class VolunteerApplicationForm extends Fragment{
         call.enqueue(new Callback<UpdateUserResponse>() {
             @Override
             public void onResponse(Call<UpdateUserResponse> call, Response<UpdateUserResponse> response) {
-                Toast.makeText(getActivity(), "Success", Toast.LENGTH_SHORT).show();
+
+                if(session.getUserRole().equals("N")){
+                    session.setUserRole("V");
+                }
+
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container,new HomeFragment()).addToBackStack(null).commit();
             }
 
             @Override
             public void onFailure(Call<UpdateUserResponse> call, Throwable t) {
-                Toast.makeText(getActivity(), "Error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), MainActivity.CONNECTION_ERROR, Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.jam.teachforindia.Activities.MainActivity;
 import com.jam.teachforindia.Fragments.Home.HomeFragment;
 import com.jam.teachforindia.Generic.SessionManager;
 import com.jam.teachforindia.R;
@@ -51,7 +52,6 @@ public class ApplyForEvent extends Fragment {
         session = new SessionManager(getActivity());
         userid = session.getUserId();
         eventid = getArguments().getString("eventid");
-        Toast.makeText(getActivity(), "heres the event" + eventid, Toast.LENGTH_SHORT).show();
         btn_apply = v.findViewById(R.id.btn_apply);
         et_applicationnote = v.findViewById(R.id.et_applicationnote);
         et_contact = v.findViewById(R.id.et_contact);
@@ -86,7 +86,7 @@ public class ApplyForEvent extends Fragment {
 
             @Override
             public void onFailure(Call<EventApplyResponse> call, Throwable t) {
-                Toast.makeText(getActivity(), "Error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), MainActivity.CONNECTION_ERROR, Toast.LENGTH_SHORT).show();
             }
         });
     }

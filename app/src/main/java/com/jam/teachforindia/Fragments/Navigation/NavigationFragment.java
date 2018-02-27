@@ -38,6 +38,8 @@ public class NavigationFragment extends Fragment implements LinkClicked{
     NavigationAdapter navigationAdapter;
     ArrayList<String> links;
 
+    TextView tv_name,tv_title;
+
     public void setDrawerListener(FragmentDrawerListener listener) {
         this.drawerListener = listener;
     }
@@ -73,6 +75,16 @@ public class NavigationFragment extends Fragment implements LinkClicked{
         recyc_navigation.setItemAnimator(new DefaultItemAnimator());
         recyc_navigation.setAdapter(navigationAdapter);
 
+        tv_title = v.findViewById(R.id.tv_title);
+        tv_name = v.findViewById(R.id.tv_name);
+        tv_name.setText(session.getUserDetails().get(SessionManager.NAME));
+
+        if(session.getUsertitle() == null){
+            tv_title.setText("the Good Student");
+        }else{
+            tv_title.setText(session.getUsertitle());
+        }
+
         setNaviagtionLinks();
 
         return v;
@@ -83,16 +95,23 @@ public class NavigationFragment extends Fragment implements LinkClicked{
 
         if(role.equals("N") || role.equals("V")){
             links.add("Home");
+            links.add("Profile");
+            links.add("Top Volunteers");
             links.add("Events");
-            links.add("Create Events");
             links.add("Update Profile");
+            links.add("Staff Feedback");
             links.add("Notifications");
             links.add("Logout");
         }else{
             links.add("Home");
+            links.add("Profile");
+            links.add("Top Volunteers");
             links.add("Events");
             links.add("Create Events");
             links.add("Update Profile");
+            links.add("Feedback");
+            links.add("Invite");
+            links.add("Notifications");
             links.add("Logout");
         }
 

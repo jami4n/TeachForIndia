@@ -3,6 +3,18 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:visibility="gone"
+        android:textAlignment="center"
+        android:id="@+id/tv_noevents"
+        android:padding="10dp"
+        android:layout_marginTop="30dp"
+        android:textSize="20dp"
+        android:text="No Events Found."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyc_events"
         android:layout_width="match_parent"

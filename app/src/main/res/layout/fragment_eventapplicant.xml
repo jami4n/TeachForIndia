@@ -3,12 +3,54 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:background="@color/color_black"
     android:layout_height="match_parent">
+
+    <TextView
+        android:visibility="gone"
+        android:textAlignment="center"
+        android:id="@+id/tv_noapplicants"
+        android:padding="10dp"
+        android:layout_marginTop="30dp"
+        android:textSize="20dp"
+        android:text="No Applicants have applied yet."
+        android:textColor="@color/color_white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
     
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyc_event_applicants"
+        android:layout_marginBottom="70dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
     </android.support.v7.widget.RecyclerView>
-    
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:id="@+id/ll_btnholder"
+        android:padding="10dp"
+        android:weightSum="2"
+        android:background="@color/color_white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_analyse"
+            android:layout_weight="1"
+            android:text="analyse"
+            android:textColor="@color/color_white"
+            android:backgroundTint="@color/color_black"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_filter"
+            android:layout_weight="1"
+            android:text="filter"
+            android:textColor="@color/color_white"
+            android:backgroundTint="@color/color_black"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
 </RelativeLayout>

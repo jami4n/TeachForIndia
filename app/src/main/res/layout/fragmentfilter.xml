@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="10dp"
+    android:background="@color/color_black"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_gender"
+                android:textSize="20dp"
+                android:textColor="@color/color_black"
+                android:text="Sort by Gender"
+                android:layout_marginLeft="4dp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:id="@+id/tv_age"
+                android:textColor="@color/color_black"
+                android:text="Sort by Age"
+                android:layout_marginLeft="4dp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:id="@+id/tv_education"
+                android:textColor="@color/color_black"
+                android:text="Sort by Education"
+                android:layout_marginLeft="4dp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <Button
+                android:id="@+id/btn_filter"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/color_black"
+                android:textColor="@color/color_white"
+                android:text="FILTER"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

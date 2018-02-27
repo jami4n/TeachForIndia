@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.jam.teachforindia.Activities.MainActivity;
 import com.jam.teachforindia.Fragments.Events.EventsAdapter;
 import com.jam.teachforindia.Fragments.Home.HomeFragment;
 import com.jam.teachforindia.Generic.SessionManager;
@@ -100,7 +101,7 @@ public class CreateEvent extends Fragment {
 
             @Override
             public void onFailure(Call<CreateEventsResponse> call, Throwable t) {
-                Toast.makeText(getActivity(), "Error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), MainActivity.CONNECTION_ERROR, Toast.LENGTH_SHORT).show();
             }
         });
     }

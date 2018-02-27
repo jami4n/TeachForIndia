@@ -102,6 +102,14 @@
 
 
                 <Button
+                    android:id="@+id/btn_selected"
+                    android:text="Selected"
+                    android:backgroundTint="@color/color_black"
+                    android:textColor="@color/color_white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <Button
                     android:id="@+id/btn_more_details"
                     android:text="More Details"
                     android:backgroundTint="@color/color_white"

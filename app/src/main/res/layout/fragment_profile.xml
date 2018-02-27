@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+     android:background="@color/color_black"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:alpha="0.1"
+        android:src="@drawable/bg"
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/white_bg"
+        android:layout_marginTop="120dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_marginTop="80dp"
+            android:paddingBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:textAlignment="center"
+                android:id="@+id/tv_name"
+                android:textColor="@color/color_black"
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:textSize="24dp"
+                android:text="Jamian Gomes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                android:gravity="center_vertical"
+                android:textAlignment="center"
+                android:id="@+id/tv_title"
+                android:textColor="@color/color_gray"
+                android:paddingBottom="10dp"
+                android:textSize="20dp"
+                android:text="Star Lord"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:visibility="gone"
+                    android:id="@+id/iv_editicon"
+                    android:alpha="0.4"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="2dp"
+                    android:src="@drawable/edit"
+                    android:layout_gravity="top"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp" />
+            </LinearLayout>
+
+            <TextView
+                android:textAlignment="center"
+                android:id="@+id/tv_email"
+                android:textColor="@color/color_gray"
+                android:paddingBottom="10dp"
+                android:textSize="20dp"
+                android:text="jamian@test.com"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <TextView
+                android:textAlignment="center"
+                android:id="@+id/tv_score"
+                android:textColor="@color/color_gray"
+                android:paddingBottom="10dp"
+                android:textSize="20dp"
+                android:text=""
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:background="@drawable/circle_bg"
+        android:layout_marginTop="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="140dp"
+        android:layout_height="140dp">
+
+        <ImageView
+            android:id="@+id/iv_pp"
+            android:padding="16dp"
+            android:src="@drawable/boy"
+            android:layout_width="140dp"
+            android:layout_height="140dp" />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

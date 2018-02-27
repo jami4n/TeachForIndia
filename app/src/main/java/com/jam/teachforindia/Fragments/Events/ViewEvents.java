@@ -10,10 +10,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.jam.teachforindia.Activities.MainActivity;
 import com.jam.teachforindia.Fragments.ApplyforEvent.ApplyForEvent;
 import com.jam.teachforindia.Fragments.EventApplicants.EventApplicants;
+import com.jam.teachforindia.Fragments.SelectedApplicants.SelectedApplicants;
 import com.jam.teachforindia.R;
 import com.jam.teachforindia.RetroServices.RetroClient;
 import com.jam.teachforindia.RetroServices.ServiceInterfaces.Events;
@@ -36,6 +39,8 @@ public class ViewEvents extends Fragment implements EventClicks{
     EventsAdapter eventsAdapter;
     ArrayList<EventsPojo> events;
 
+    TextView tv_noevents;
+
     public ViewEvents() {
     }
 
@@ -56,6 +61,8 @@ public class ViewEvents extends Fragment implements EventClicks{
         recyc_events.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyc_events.setItemAnimator(new DefaultItemAnimator());
         recyc_events.setAdapter(eventsAdapter);
+
+        tv_noevents = v.findViewById(R.id.tv_noevents);
 
         getEvents(0);
 
@@ -83,6 +90,7 @@ public class ViewEvents extends Fragment implements EventClicks{
 
 
                 }else{
+                    tv_noevents.setVisibility(View.VISIBLE);
                     Toast.makeText(getActivity(), "" + response.body().getMessage(), Toast.LENGTH_SHORT).show();
                 }
 
@@ -90,7 +98,7 @@ public class ViewEvents extends Fragment implements EventClicks{
 
             @Override
             public void onFailure(Call<EventsResponse> call, Throwable t) {
-                Toast.makeText(getActivity(), "Error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), MainActivity.CONNECTION_ERROR, Toast.LENGTH_SHORT).show();
             }
         });
 //
@@ -109,8 +117,7 @@ public class ViewEvents extends Fragment implements EventClicks{
 
     @Override
     public void applyforevent(View v, String eventid) {
-        Toast.makeText(getActivity(), "" + eventid, Toast.LENGTH_SHORT).show();
-
+            
         Fragment f = new ApplyForEvent();
         Bundle b = new Bundle();
         b.putString("eventid",eventid);
@@ -133,6 +140,23 @@ public class ViewEvents extends Fragment implements EventClicks{
                 .addToBackStack(null)
                 .commit();
 
+
+    }
+
+    @Override
+    public void selectedApplicants(View v, String eventid) {
+
+        Fragment eve = new SelectedApplicants();
+        Bundle b = new Bundle();
+        b.putString("eventid",eventid);
+        eve.setArguments(b);
+
+        getActivity().getSupportFragmentManager()
+                .beginTransaction()
+                .setCustomAnimations(R.anim.enter_from_right,R.anim.exit_to_left)
+                .replace(R.id.container,eve)
+                .addToBackStack(null)
+                .commit();
 
     }
 }

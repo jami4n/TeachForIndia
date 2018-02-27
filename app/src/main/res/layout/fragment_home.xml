@@ -8,61 +8,432 @@
         <!--android:id="@+id/recyc_banner"-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>-->
-
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <ss.com.bannerslider.views.BannerSlider
         android:id="@+id/banner_slider1"
         app:loopSlides="true"
         app:interval="3000"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="260dp"
         />
 
 
     <LinearLayout
-        android:layout_alignParentBottom="true"
-        android:gravity="center_vertical"
+        android:visibility="gone"
+        android:id="@+id/ll_update_holder"
         android:layout_margin="10dp"
-        android:padding="10dp"
-        android:weightSum="10"
-        android:background="@color/color_black"
+        android:layout_below="@id/banner_slider1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
+        <Button
+            android:id="@+id/btn_update"
             android:textColor="@color/color_white"
-            android:textAlignment="center"
-            android:textSize="30sp"
-            android:text="256"
-            android:layout_weight="2"
-            android:layout_width="0dp"
+            android:backgroundTint="@color/color_black"
+            android:text="Update your details"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_weight="8"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:textColor="@color/color_white"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                android:text="Susanne Rodrigues"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+    </LinearLayout>
 
 
-            <TextView
-                android:textColor="@color/color_white"
-                android:textAlignment="center"
-                android:text="the Prefect"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+     <LinearLayout
+         android:id="@+id/ll_staffstories"
+         android:background="@color/color_lightgray"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="vertical">
 
-        </LinearLayout>
+
+         <TextView
+             android:textAlignment="center"
+             android:id="@+id/tv_nonotif"
+             android:textColor="@color/color_black"
+             android:padding="10dp"
+             android:layout_marginTop="10dp"
+             android:textSize="20dp"
+             android:text="Featured Stories"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content" />
+
+         <RelativeLayout
+             android:id="@+id/rl_staff_story"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content">
+
+             <android.support.v7.widget.CardView
+                 android:layout_margin="10dp"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content">
+
+                 <LinearLayout
+                     android:orientation="vertical"
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent">
+
+                     <ImageView
+                         android:src="@drawable/temp_vol2"
+                         android:scaleType="centerCrop"
+                         android:id="@+id/iv_event_image"
+                         android:layout_width="match_parent"
+                         android:layout_height="150dp" />
+
+                     <TextView
+                         android:id="@+id/tv_event_title"
+                         android:layout_marginLeft="10dp"
+                         android:layout_marginRight="10dp"
+                         android:layout_marginTop="10dp"
+                         android:textSize="16dp"
+                         android:text="The Volunteer Experience: Notes from the First Shift"
+                         android:textStyle="bold"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content" />
+
+                 <LinearLayout
+                     android:visibility="visible"
+                     android:id="@+id/ll_desc"
+                     android:orientation="vertical"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content">
+
+                     <TextView
+                         android:id="@+id/tv_description"
+                         android:layout_marginLeft="10dp"
+                         android:layout_marginRight="10dp"
+                         android:layout_marginTop="6dp"
+                         android:text="Today I am member of the UN Global Education First Youth Advocacy Group. Many young people..."
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content" />
+
+                     <TextView
+                         android:textStyle="italic|bold"
+                         android:text="Read full article"
+                         android:layout_marginLeft="10dp"
+                         android:layout_marginRight="10dp"
+                         android:layout_marginTop="4dp"
+                         android:layout_marginBottom="10dp"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content" />
+                 </LinearLayout>
+
+                     <LinearLayout
+                         android:visibility="gone"
+                         android:id="@+id/ll_data"
+                         android:orientation="vertical"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content">
+
+                         <TextView
+                             android:id="@+id/tv_location"
+                             android:layout_marginLeft="10dp"
+                             android:layout_marginRight="10dp"
+                             android:layout_marginTop="4dp"
+                             android:layout_marginBottom="10dp"
+                             android:text="Today I am member of the UN Global Education First Youth Advocacy Group. Many young people have come across me to ask how I got to be in such an initiative. It has always been a pleasure for me to share my volunteer experiences because it is from these experiences that I was selected out of 500 applications to serve in this group.
+
+It all started when I was in secondary school. I was engaged in student affairs as the president of UNESCO club, a school platform that brings students together to discuss school matters and the pressing and current issues concerning them.
+
+After secondary school, I started volunteering within non-governmental organizations. It was in this moment that I began to understand a lot about community development. I was involved in projects and activities relating to peace, human rights, environment and HIV/AIDS. It was a great pleasure for me to contribute to the development of my community through volunteering because the impact was visible.
+
+I had many obstacles while volunteering because people don’t value volunteer work. In Cameroon and especially in my community, people consider volunteering as waste of time and resources. They cannot conceive the fact that someone can work without remuneration or a salary. My friends and family relatives advised me on several occasions to stop volunteering. I felt very discouraged at some point but I could not stop because I loved doing it. Volunteering was the top priority of my life. I decided not to pay attention to their advice but to concentrate on my work."
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content" />
+
+
+                     </LinearLayout>
+
+                     <View
+                         android:layout_marginBottom="4dp"
+                         android:layout_marginLeft="10dp"
+                         android:layout_marginRight="30dp"
+                         android:background="@color/color_gray"
+                         android:layout_width="match_parent"
+                         android:layout_height="1dp"></View>
+
+
+                     <TextView
+                         android:id="@+id/tv_vol_name"
+                         android:layout_marginLeft="10dp"
+                         android:layout_marginRight="10dp"
+                         android:layout_marginTop="4dp"
+                         android:layout_marginBottom="10dp"
+                         android:text="- by Kalki Mehta"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content" />
+
+                 </LinearLayout>
+
+             </android.support.v7.widget.CardView>
+
+         </RelativeLayout>
+
+         <RelativeLayout
+             android:id="@+id/rl_staff_story1"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content">
+
+             <android.support.v7.widget.CardView
+                 android:layout_margin="10dp"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content">
+
+                 <LinearLayout
+                     android:orientation="vertical"
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent">
+
+                     <ImageView
+                         android:src="@drawable/temp_vol1"
+                         android:scaleType="centerCrop"
+                         android:layout_width="match_parent"
+                         android:layout_height="150dp" />
+
+                     <TextView
+                         android:layout_marginLeft="10dp"
+                         android:layout_marginRight="10dp"
+                         android:layout_marginTop="10dp"
+                         android:textSize="16dp"
+                         android:text="The Volunteer Experience: Notes from the First Shift"
+                         android:textStyle="bold"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content" />
+
+                     <LinearLayout
+                         android:visibility="visible"
+                         android:id="@+id/ll_desc1"
+                         android:orientation="vertical"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content">
+
+                         <TextView
+                             android:layout_marginLeft="10dp"
+                             android:layout_marginRight="10dp"
+                             android:layout_marginTop="6dp"
+                             android:text="Today I am member of the UN Global Education First Youth Advocacy Group. Many young people..."
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content" />
+
+                         <TextView
+                             android:textStyle="italic|bold"
+                             android:text="Read full article"
+                             android:layout_marginLeft="10dp"
+                             android:layout_marginRight="10dp"
+                             android:layout_marginTop="4dp"
+                             android:layout_marginBottom="10dp"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content" />
+                     </LinearLayout>
+
+                     <LinearLayout
+                         android:visibility="gone"
+                         android:id="@+id/ll_data1"
+                         android:orientation="vertical"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content">
+
+                         <TextView
+                             android:layout_marginLeft="10dp"
+                             android:layout_marginRight="10dp"
+                             android:layout_marginTop="4dp"
+                             android:layout_marginBottom="10dp"
+                             android:text="Today I am member of the UN Global Education First Youth Advocacy Group. Many young people have come across me to ask how I got to be in such an initiative. It has always been a pleasure for me to share my volunteer experiences because it is from these experiences that I was selected out of 500 applications to serve in this group.
+
+It all started when I was in secondary school. I was engaged in student affairs as the president of UNESCO club, a school platform that brings students together to discuss school matters and the pressing and current issues concerning them.
+
+After secondary school, I started volunteering within non-governmental organizations. It was in this moment that I began to understand a lot about community development. I was involved in projects and activities relating to peace, human rights, environment and HIV/AIDS. It was a great pleasure for me to contribute to the development of my community through volunteering because the impact was visible.
+
+I had many obstacles while volunteering because people don’t value volunteer work. In Cameroon and especially in my community, people consider volunteering as waste of time and resources. They cannot conceive the fact that someone can work without remuneration or a salary. My friends and family relatives advised me on several occasions to stop volunteering. I felt very discouraged at some point but I could not stop because I loved doing it. Volunteering was the top priority of my life. I decided not to pay attention to their advice but to concentrate on my work."
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content" />
+
+
+                     </LinearLayout>
+
+                     <View
+                         android:layout_marginBottom="4dp"
+                         android:layout_marginLeft="10dp"
+                         android:layout_marginRight="30dp"
+                         android:background="@color/color_gray"
+                         android:layout_width="match_parent"
+                         android:layout_height="1dp"></View>
+
+
+                     <TextView
+                         android:layout_marginLeft="10dp"
+                         android:layout_marginRight="10dp"
+                         android:layout_marginTop="4dp"
+                         android:layout_marginBottom="10dp"
+                         android:text="- by Darren Gonse"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content" />
+
+                 </LinearLayout>
+
+             </android.support.v7.widget.CardView>
+
+         </RelativeLayout>
+
+         <RelativeLayout
+             android:id="@+id/rl_staff_story2"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content">
+
+             <android.support.v7.widget.CardView
+                 android:layout_margin="10dp"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content">
+
+                 <LinearLayout
+                     android:orientation="vertical"
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent">
+
+                     <ImageView
+                         android:src="@drawable/temp_vol"
+                         android:scaleType="centerCrop"
+                         android:layout_width="match_parent"
+                         android:layout_height="150dp" />
+
+                     <TextView
+                         android:layout_marginLeft="10dp"
+                         android:layout_marginRight="10dp"
+                         android:layout_marginTop="10dp"
+                         android:textSize="16dp"
+                         android:text="The Volunteer Experience: Notes from the First Shift"
+                         android:textStyle="bold"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content" />
+
+                     <LinearLayout
+                         android:visibility="visible"
+                         android:id="@+id/ll_desc2"
+                         android:orientation="vertical"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content">
+
+                         <TextView
+                             android:layout_marginLeft="10dp"
+                             android:layout_marginRight="10dp"
+                             android:layout_marginTop="6dp"
+                             android:text="Today I am member of the UN Global Education First Youth Advocacy Group. Many young people..."
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content" />
+
+                         <TextView
+                             android:textStyle="italic|bold"
+                             android:text="Read full article"
+                             android:layout_marginLeft="10dp"
+                             android:layout_marginRight="10dp"
+                             android:layout_marginTop="4dp"
+                             android:layout_marginBottom="10dp"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content" />
+                     </LinearLayout>
+
+                     <LinearLayout
+                         android:visibility="gone"
+                         android:id="@+id/ll_data2"
+                         android:orientation="vertical"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content">
+
+                         <TextView
+                             android:layout_marginLeft="10dp"
+                             android:layout_marginRight="10dp"
+                             android:layout_marginTop="4dp"
+                             android:layout_marginBottom="10dp"
+                             android:text="Today I am member of the UN Global Education First Youth Advocacy Group. Many young people have come across me to ask how I got to be in such an initiative. It has always been a pleasure for me to share my volunteer experiences because it is from these experiences that I was selected out of 500 applications to serve in this group.
+
+It all started when I was in secondary school. I was engaged in student affairs as the president of UNESCO club, a school platform that brings students together to discuss school matters and the pressing and current issues concerning them.
+
+After secondary school, I started volunteering within non-governmental organizations. It was in this moment that I began to understand a lot about community development. I was involved in projects and activities relating to peace, human rights, environment and HIV/AIDS. It was a great pleasure for me to contribute to the development of my community through volunteering because the impact was visible.
+
+I had many obstacles while volunteering because people don’t value volunteer work. In Cameroon and especially in my community, people consider volunteering as waste of time and resources. They cannot conceive the fact that someone can work without remuneration or a salary. My friends and family relatives advised me on several occasions to stop volunteering. I felt very discouraged at some point but I could not stop because I loved doing it. Volunteering was the top priority of my life. I decided not to pay attention to their advice but to concentrate on my work."
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content" />
+
+
+                     </LinearLayout>
+
+                     <View
+                         android:layout_marginBottom="4dp"
+                         android:layout_marginLeft="10dp"
+                         android:layout_marginRight="30dp"
+                         android:background="@color/color_gray"
+                         android:layout_width="match_parent"
+                         android:layout_height="1dp"></View>
+
+
+                     <TextView
+                         android:layout_marginLeft="10dp"
+                         android:layout_marginRight="10dp"
+                         android:layout_marginTop="4dp"
+                         android:layout_marginBottom="10dp"
+                         android:text="- by Dia Gonsalves"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content" />
+
+                 </LinearLayout>
+
+             </android.support.v7.widget.CardView>
+
+         </RelativeLayout>
+
+     </LinearLayout>
 
     </LinearLayout>
+    </ScrollView>
+    <!--<LinearLayout-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:layout_margin="10dp"-->
+        <!--android:padding="10dp"-->
+        <!--android:weightSum="10"-->
+        <!--android:background="@color/color_black"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <!--<TextView-->
+            <!--android:textColor="@color/color_white"-->
+            <!--android:textAlignment="center"-->
+            <!--android:textSize="30sp"-->
+            <!--android:text="256"-->
+            <!--android:layout_weight="2"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content" />-->
+
+        <!--<LinearLayout-->
+            <!--android:orientation="vertical"-->
+            <!--android:layout_weight="8"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content">-->
+
+            <!--<TextView-->
+                <!--android:textColor="@color/color_white"-->
+                <!--android:textAlignment="center"-->
+                <!--android:textSize="20sp"-->
+                <!--android:text="Susanne Rodrigues"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content" />-->
+
+
+            <!--<TextView-->
+                <!--android:textColor="@color/color_white"-->
+                <!--android:textAlignment="center"-->
+                <!--android:text="the Prefect"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content" />-->
+
+        <!--</LinearLayout>-->
+
+    <!--</LinearLayout>-->
 
 
 </RelativeLayout>

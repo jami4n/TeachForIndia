@@ -23,6 +23,10 @@ public class SessionManager {
     public static final String USERNAME = "UserEmail";
     public static final String ROLE = "UserRole";
     public static final String NAME = "UserName";
+    public static final String GENDER = "Gender";
+    public static final String EDITICON = "editicon";
+    private static final String SCORE = "score";
+    private static final String TITLE = "title";
 
     public SessionManager(Context context) {
         this.context = context;
@@ -31,12 +35,13 @@ public class SessionManager {
     }
 
 
-    public void setUserLoggedIn(String username, String userid, String role,String name){
+    public void setUserLoggedIn(String username, String userid, String role,String name,String usertitle){
         editor.putBoolean(IS_LOGGED_IN, true);
         editor.putString(USERNAME, username);
         editor.putString(USER_ID, userid);
         editor.putString(ROLE, role);
         editor.putString(NAME, name);
+        editor.putString(TITLE, usertitle);
         editor.commit();
     }
 
@@ -52,12 +57,18 @@ public class SessionManager {
         editor.commit();
     }
 
+    public void setGender(String gender) {
+        editor.putString(GENDER, gender);
+        editor.commit();
+    }
+
     public HashMap<String, String> getUserDetails(){
         HashMap<String, String> user = new HashMap<String, String>();
         user.put(USERNAME, sharedPreferences.getString(USERNAME, null));
         user.put(USER_ID, sharedPreferences.getString(USER_ID, null));
         user.put(ROLE, sharedPreferences.getString(ROLE, null));
         user.put(NAME, sharedPreferences.getString(NAME, null));
+        user.put(GENDER, sharedPreferences.getString(GENDER, null));
         return user;
     }
 
@@ -68,10 +79,36 @@ public class SessionManager {
     public String getUserRole(){
         return sharedPreferences.getString(ROLE,null);
     }
+
+    public void setUserRole(String role){
+        editor.putString(ROLE,role);
+        editor.commit();
+    }
+    public String getUserScore(){
+        return sharedPreferences.getString(SCORE,null);
+    }
+    public void setUserScore(String score){
+        editor.putString(SCORE,score);
+        editor.commit();
+    }
+    public String getUsertitle(){
+        return sharedPreferences.getString(TITLE,null);
+    }
+    public void setUserTitle(String title){
+        editor.putString(TITLE,title);
+        editor.commit();
+    }
     public String getUserId(){
-        return sharedPreferences.getString(USER_ID,null);
+        return sharedPreferences.getString(USER_ID,"0");
     }
 
+    public void hideEditIconForever(boolean hide){
+        editor.putBoolean(EDITICON,hide);
+        editor.commit();
+    }
+    public boolean hideEditIconForever(){
+        return sharedPreferences.getBoolean(EDITICON,false);
+    }
 
 
 }

@@ -95,7 +95,7 @@
                         android:id="@+id/iv_girl"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
-                        android:src="@drawable/girl"
+                        android:src="@drawable/girl_line"
                         android:layout_width="40dp"
                         android:layout_height="40dp" />
 
@@ -416,7 +416,7 @@
                 <TextView
                     android:id="@+id/et_friday"
                     android:layout_marginTop="4dp"
-                    android:textColor="@color/color_blue"
+                    android:textColor="@color/color_black"
                     android:text="Friday"
                     android:layout_marginLeft="4dp"
                     android:textStyle="bold"
@@ -426,7 +426,7 @@
                 <TextView
                     android:id="@+id/et_saturday"
                     android:layout_marginTop="4dp"
-                    android:textColor="@color/color_blue"
+                    android:textColor="@color/color_black"
                     android:text="Saturday"
                     android:layout_marginLeft="4dp"
                     android:textStyle="bold"
@@ -459,7 +459,7 @@
                 <TextView
                     android:id="@+id/tv_07301230"
                     android:layout_marginTop="4dp"
-                    android:textColor="@color/color_blue"
+                    android:textColor="@color/color_black"
                     android:text="Between 7:30 am - 12:30 pm"
                     android:layout_marginLeft="4dp"
                     android:textStyle="bold"
@@ -496,7 +496,7 @@
                 <TextView
                     android:id="@+id/tv_classroom"
                     android:layout_marginTop="4dp"
-                    android:textColor="@color/color_blue"
+                    android:textColor="@color/color_black"
                     android:text="Classroom instruction"
                     android:layout_marginLeft="4dp"
                     android:textStyle="bold"
@@ -633,7 +633,7 @@
                 <TextView
                     android:id="@+id/tv_teachingexp_yes"
                     android:layout_marginTop="4dp"
-                    android:textColor="@color/color_blue"
+                    android:textColor="@color/color_black"
                     android:text="Yes"
                     android:layout_marginLeft="4dp"
                     android:textStyle="bold"
@@ -671,7 +671,7 @@
                 <TextView
                     android:id="@+id/tv_priorapplied_yes"
                     android:layout_marginTop="4dp"
-                    android:textColor="@color/color_blue"
+                    android:textColor="@color/color_black"
                     android:text="Yes"
                     android:layout_marginLeft="4dp"
                     android:textStyle="bold"

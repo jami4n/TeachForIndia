@@ -57,7 +57,7 @@ public class LoginFragment extends Fragment {
         et_username = v.findViewById(R.id.et_username);
 
         et_username.setText("vinay@test.com");
-        et_pass.setText("vinay");
+        et_pass.setText("pass");
 
         tv_signup = v.findViewById(R.id.tv_signup);
         tv_signup.setOnClickListener(new View.OnClickListener() {
@@ -100,8 +100,9 @@ public class LoginFragment extends Fragment {
 
                 if(response.body().getCode().equals("0")){
                     LoginData ld = response.body().getData().get(0);
-                    session.setUserLoggedIn(ld.getEmail(),ld.getPassword(),ld.getRole(),ld.getFirstname());
+                    session.setUserLoggedIn(ld.getEmail(),ld.getUserid(),ld.getRole(),ld.getFirstname(),ld.getUsertitle());
                     Intent i = new Intent(getActivity(),MainActivity.class);
+                    i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(i);
                 }else{
                     Toast.makeText(getActivity(), "" + response.body().getMessage(), Toast.LENGTH_SHORT).show();
@@ -111,7 +112,7 @@ public class LoginFragment extends Fragment {
 
             @Override
             public void onFailure(Call<LoginResponse> call, Throwable t) {
-                Toast.makeText(getActivity(), "Error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), MainActivity.CONNECTION_ERROR, Toast.LENGTH_SHORT).show();
             }
         });
 

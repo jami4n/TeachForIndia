@@ -10,10 +10,16 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.jam.teachforindia.Activities.MainActivity;
+import com.jam.teachforindia.Fragments.Filter.AnalyseFragment;
+import com.jam.teachforindia.Fragments.Filter.FilterByFragment;
 import com.jam.teachforindia.Fragments.Notes.EventConfirmation;
 import com.jam.teachforindia.Fragments.Notes.EventRejected;
+import com.jam.teachforindia.Fragments.Notes.PostEventRating;
 import com.jam.teachforindia.R;
 import com.jam.teachforindia.RetroServices.RetroClient;
 import com.jam.teachforindia.RetroServices.ServiceInterfaces.Events;
@@ -22,6 +28,8 @@ import com.jam.teachforindia.RetroServices.ServiceResponses.EventApplicants.Even
 import com.jam.teachforindia.RetroServices.ServiceResponses.StaffUpdateApplication.ApplicationUpdateResponse;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -36,6 +44,11 @@ public class EventApplicants extends Fragment implements EventApplicantClicks{
     RecyclerView recyc_eventapplicants;
     ArrayList<EventApplicantsPojo> eventApplicants;
     EventsApplicationAdapter eventsApplicationAdapter;
+
+    TextView tv_noapplicants;
+    Button btn_filter,btn_analyse;
+
+    String sortby;
 
     public EventApplicants() {
     }
@@ -57,15 +70,57 @@ public class EventApplicants extends Fragment implements EventApplicantClicks{
         recyc_eventapplicants.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyc_eventapplicants.setItemAnimator(new DefaultItemAnimator());
         recyc_eventapplicants.setAdapter(eventsApplicationAdapter);
-        
-        setApplicantsData();
-        
+
+        tv_noapplicants = v.findViewById(R.id.tv_noapplicants);
+
+        setApplicantsData(getArguments().getString("eventid"));
+
+        sortby = getArguments().getString("sortby");
+
+        btn_filter = v.findViewById(R.id.btn_filter);
+        btn_filter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Fragment eve = new FilterByFragment();
+                Bundle b = new Bundle();
+                b.putString("eventid",getArguments().getString("eventid"));
+                eve.setArguments(b);
+
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .setCustomAnimations(R.anim.enter_from_right,R.anim.exit_to_left)
+                        .replace(R.id.container,eve)
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
+
+        btn_analyse = v.findViewById(R.id.btn_analyse);
+        btn_analyse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Fragment eve = new AnalyseFragment();
+                Bundle b = new Bundle();
+                b.putString("eventid",getArguments().getString("eventid"));
+                eve.setArguments(b);
+
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .setCustomAnimations(R.anim.enter_from_right,R.anim.exit_to_left)
+                        .replace(R.id.container,eve)
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
+
         return v;
     }
 
-    private void setApplicantsData() {
+    private void setApplicantsData(String eventid) {
         Events events = RetroClient.getClient().create(Events.class);
-        Call<EventApplicantsResponse> call = events.getEventApplicants("0f781df2-12cf-11e8-8f6e-3863bb91cb0c");
+        Call<EventApplicantsResponse> call = events.getEventApplicants(eventid);
         call.enqueue(new Callback<EventApplicantsResponse>() {
             @Override
             public void onResponse(Call<EventApplicantsResponse> call, Response<EventApplicantsResponse> response) {
@@ -80,7 +135,7 @@ public class EventApplicants extends Fragment implements EventApplicantClicks{
                                 ad.getCurrentemail(),
                                 ad.getContactnumber(),
                                 ad.getFirstname(),
-                                "245",
+                                "",
                                 ad.getAge(),
                                 ad.getGender(),
                                 ad.getEducation(),
@@ -95,7 +150,10 @@ public class EventApplicants extends Fragment implements EventApplicantClicks{
                     }
 
                     eventsApplicationAdapter.notifyDataSetChanged();
+                    
+                    SortVolunteers();
                 }else{
+                    tv_noapplicants.setVisibility(View.VISIBLE);
                     Toast.makeText(getActivity(), "" + response.body().getMessage(), Toast.LENGTH_SHORT).show();
                 }
 
@@ -103,16 +161,80 @@ public class EventApplicants extends Fragment implements EventApplicantClicks{
 
             @Override
             public void onFailure(Call<EventApplicantsResponse> call, Throwable t) {
-                Toast.makeText(getActivity(), "Error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), MainActivity.CONNECTION_ERROR, Toast.LENGTH_SHORT).show();
             }
         });
     }
 
+    private void SortVolunteers() {
+
+        if(sortby != null){
+
+
+            if(sortby.equals("age")){
+
+                Collections.sort(eventApplicants, new Comparator<EventApplicantsPojo>() {
+                    @Override
+                    public int compare(EventApplicantsPojo o1, EventApplicantsPojo o2) {
+                        return o1.getAge().compareTo(o2.getAge());
+                    }
+                });
+            }
+
+
+            if(sortby.equals("gen")){
+
+                Collections.sort(eventApplicants, new Comparator<EventApplicantsPojo>() {
+                    @Override
+                    public int compare(EventApplicantsPojo o1, EventApplicantsPojo o2) {
+                        return o1.getGender().compareTo(o2.getGender());
+                    }
+                });
+
+            }
+
+
+            if(sortby.equals("edu")){
+
+                Collections.sort(eventApplicants, new Comparator<EventApplicantsPojo>() {
+                    @Override
+                    public int compare(EventApplicantsPojo o1, EventApplicantsPojo o2) {
+
+                        //Post Graduate
+                        //Graduate
+                        //Pursuing UnderGraduate Degree
+                        //In School
+
+                        if(o1.equals(o2)){
+                            return 0;
+                        }
+
+                        if(o1.getEducation().equals("Post Graduate") && (o2.getEducation().equals("Pursuing UnderGraduate Degree") || o2.getEducation().equals("Graduate") || o2.getEducation().equals("In School"))){
+                            return 1;
+                        }else if(o1.getEducation().equals("Graduate") && (o2.getEducation().equals("Pursuing UnderGraduate Degree") || o2.getEducation().equals("In School"))){
+                            return 1;
+                        }else if(o1.getEducation().equals("Pursuing UnderGraduate Degree") && o2.getEducation().equals("In School")){
+                            return 1;
+                        }else{
+                            return -1;
+                        }
+                        //return o1.getEducation().compareTo(o2.getEducation());
+                    }
+                });
+
+                Collections.reverse(eventApplicants);
+            }
+
+        }
+
+    }
+
     @Override
     public void onSelectedClicked(View v, int isSelected, String applicationid,String name) {
-        Toast.makeText(getActivity(), "" + isSelected, Toast.LENGTH_SHORT).show();
 
         if(isSelected == 2){
+            TextView t = (TextView) v;
+            t.setText("On Hold");
             updateToHold(applicationid);
         }else if(isSelected == 1){
 
@@ -142,12 +264,14 @@ public class EventApplicants extends Fragment implements EventApplicantClicks{
             @Override
             public void onResponse(Call<ApplicationUpdateResponse> call, Response<ApplicationUpdateResponse> response) {
 
+
                 Toast.makeText(getActivity(), "" + response.body().getMessage(), Toast.LENGTH_SHORT).show();
+
             }
 
             @Override
             public void onFailure(Call<ApplicationUpdateResponse> call, Throwable t) {
-                Toast.makeText(getActivity(), "Error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), MainActivity.CONNECTION_ERROR, Toast.LENGTH_SHORT).show();
             }
         });
     }

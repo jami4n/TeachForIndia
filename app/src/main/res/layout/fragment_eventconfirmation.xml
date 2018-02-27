@@ -28,7 +28,7 @@
                 android:backgroundTint="@android:color/transparent"
                 android:textColor="@color/color_gray"
                 android:textSize="18dp"
-                android:text="Thank you for applying for the 'Saturday art class'. We are happy to confirm that you will be a part of our team to impart knowledge to the children of Ghatkopar for the month of June. We hold classes for children every Saturday and Sunday at 6.00pm to 8.00pm. For any futher questions you may contact the event coordinator, Natalie at 9987xxxxxx. \nPlease inform us if you would like to withdraw your participation from this  event. \nRegards, \nTeach for India."
+                android:text="Thank you for applying for the Event. We are happy to confirm that you will be a part of our team to impart knowledge to the children of Ghatkopar for the month of June. We hold classes for children every Saturday and Sunday at 6.00pm to 8.00pm. For any futher questions you may contact the event coordinator, Natalie at 9987xxxxxx. \nPlease inform us if you would like to withdraw your participation from this  event. \nRegards, \nTeach for India."
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <LinearLayout

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:visibility="gone"
+        android:textAlignment="center"
+        android:id="@+id/tv_noapplicants"
+        android:padding="10dp"
+        android:layout_marginTop="30dp"
+        android:textSize="20dp"
+        android:text="No Applicants have been selected yet."
+        android:textColor="@color/color_black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyc_event_selected_applicants"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+
+
+</RelativeLayout>

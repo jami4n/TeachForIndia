@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.jam.teachforindia.Activities.MainActivity;
 import com.jam.teachforindia.Generic.SessionManager;
 import com.jam.teachforindia.R;
 import com.jam.teachforindia.RetroServices.RetroClient;
@@ -88,7 +89,7 @@ public class EventConfirmation extends Fragment {
 
             @Override
             public void onFailure(Call<ApplicationUpdateResponse> call, Throwable t) {
-                Toast.makeText(getActivity(), "Error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), MainActivity.CONNECTION_ERROR, Toast.LENGTH_SHORT).show();
             }
         });
 

@@ -11,13 +11,23 @@ public class LoginData {
     String password;
     String role;
     String firstname;
+    String usertitle;
 
-    public LoginData(String userid, String email, String password, String role, String firstname) {
+    public LoginData(String userid, String email, String password, String role, String firstname, String usertitle) {
         this.userid = userid;
         this.email = email;
         this.password = password;
         this.role = role;
         this.firstname = firstname;
+        this.usertitle = usertitle;
+    }
+
+    public String getUsertitle() {
+        return usertitle;
+    }
+
+    public void setUsertitle(String usertitle) {
+        this.usertitle = usertitle;
     }
 
     public String getUserid() {

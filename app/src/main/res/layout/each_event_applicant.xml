@@ -23,6 +23,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
+                android:visibility="gone"
                 android:id="@+id/iv_profile"
                 android:layout_weight="1"
                 android:src="@drawable/pen"
@@ -33,7 +34,6 @@
                 android:id="@+id/tv_name"
                 android:textSize="20dp"
                 android:layout_weight="17"
-                android:layout_marginLeft="10dp"
                 android:textStyle="bold"
                 android:text="Jamian Gomes"
                 android:layout_width="wrap_content"
@@ -230,6 +230,7 @@
 
 
             <ImageView
+                android:visibility="gone"
                 android:layout_marginLeft="10dp"
                 android:id="@+id/iv_hold"
                 android:src="@drawable/hold"

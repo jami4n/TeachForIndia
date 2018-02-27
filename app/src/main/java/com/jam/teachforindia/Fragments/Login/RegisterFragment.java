@@ -82,8 +82,9 @@ public class RegisterFragment extends Fragment {
 
                 if(response.body().getCode().equals("0")){
                     RegisterData rd = response.body().getData();
-                    session.setUserLoggedIn(rd.getEmail(),rd.getPassword(),rd.getRole(),name);
+                    session.setUserLoggedIn(rd.getEmail(),rd.getUserid(),rd.getRole(),name,"the Good Student");
                     Intent i = new Intent(getActivity(),MainActivity.class);
+                    i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     getActivity().startActivity(i);
 
                 }else{
